@@ -9,7 +9,7 @@ export const Welcome = ({ navigation }) => {
         'ComicNeue-Regular': require('../assets/fonts/ComicNeue-Regular.ttf'),
         'Damion-Regular': require('../assets/fonts/Damion-Regular.ttf'),
         'GrandHotel-Regular': require('../assets/fonts/GrandHotel-Regular.ttf'),
-        'Redressed-Regular': require('../assets/fonts/Redressed-Regular.ttf')
+        'Manrope': require('../assets/fonts/Manrope.ttf')
     });
 
     return(
@@ -65,6 +65,6 @@ const styles = StyleSheet.create({
         color: 'rgb(255, 255, 255)',
         textAlign: 'center',
         fontSize: 18,
-        fontFamily: 'ComicNeue-Regular'
+        fontFamily: 'Manrope',
     }
 });

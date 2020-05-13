@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 export const global = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#282b3a',
+        backgroundColor: '#ebecf0',
         width: '100%',
         justifyContent: 'center',
         alignItems: 'center'
@@ -23,13 +23,14 @@ export const global = StyleSheet.create({
     },
     formInput: {
         borderBottomWidth: 1,
-        borderBottomColor: 'rgba(255, 255, 255, 0.2)',
+        // borderBottomColor: 'rgba(255, 255, 255, 0.2)',
+        borderBottomColor: 'rgba(0, 0, 0, 0.2)',
         width: '85%',
         height: 35,
-        color: '#fff'
+        color: '#000'
     },
     icon: {
-        color: 'rgba(255, 255, 255, 0.5)',
+        borderBottomColor: 'rgba(0, 0, 0, 0.2)',
         marginRight: 20,
     },
     button: {
@@ -39,17 +40,17 @@ export const global = StyleSheet.create({
         height: 35,
         marginVertical: 20,
         borderWidth: 1,
-        borderColor: 'rgba(255, 255, 255, 0.5)'
+        borderBottomColor: 'rgba(0, 0, 0, 0.2)',
     },
     buttonText: {
-        color: 'rgba(255, 255, 255, 0.5)',
+        borderBottomColor: 'rgba(0, 0, 0, 0.2)',
         fontSize: 13
     },
     bottomLegend: {
-        color: 'rgba(255, 255, 255, 0.5)'
+        borderBottomColor: 'rgba(0, 0, 0, 0.2)',
     },
     boldText: {
-        color: 'rgba(255, 255, 255, 0.8)',
+        borderBottomColor: 'rgba(0, 0, 0, 0.2)',
         fontWeight: 'bold'
     },
     centerItems: {
@@ -57,7 +58,7 @@ export const global = StyleSheet.create({
         margin: 10
     },
     textMainColor: {
-        color: 'rgb(255, 255, 255)'
+        color: 'rgb(0, 0, 0)'
     },
     modalFormContainer: {
     },
