@@ -1,24 +1,18 @@
 import  React, { useState, useEffect } from 'react';
-import { View, TextInput, StyleSheet, Image, Text , TouchableWithoutFeedback, Keyboard, TouchableHighlight } from 'react-native';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
+import { View, TextInput, StyleSheet, Image, Text , TouchableWithoutFeedback, Keyboard, TouchableOpacity } from 'react-native';
 import { global } from '../shared/styles';
 import { useFonts } from '@use-expo/font';
 
 export function Login({ navigation }){
 
     let [fontsLoaded] = useFonts({
-        'OpenSans-Regular': require('../assets/fonts/OpenSans-Regular.ttf'),
-        'OpenSans-Light': require('../assets/fonts/OpenSans-Light.ttf'),
-        'Quicksand_300': require('../assets/fonts/Quicksand_300.ttf'),
-        'Quicksand_400': require('../assets/fonts/Quicksand_400.ttf'),
         'Manrope': require('../assets/fonts/Manrope.ttf')
     });
 
-    // const [ email, setEmail ] = useState('christian@test.com');
-    // const [ password, setPassword ] = useState('holamundo');
-    const [ email, setEmail ] = useState('');
-    const [ password, setPassword ] = useState('');
+    const [ email, setEmail ] = useState('christian@test.com');
+    const [ password, setPassword ] = useState('holamundo');
+    // const [ email, setEmail ] = useState('');
+    // const [ password, setPassword ] = useState('');
 
     const handleSubmit = () => {
         console.log(`The email and password are: ${email}: ${password}`);
@@ -52,12 +46,12 @@ export function Login({ navigation }){
                             value={password}
                         />
                     </View>
-                    <TouchableHighlight style={styles.button} onPress={handleSubmit}>
+                    <TouchableOpacity style={styles.button} onPress={handleSubmit}>
                         <Text style={styles.buttonText}>SIGN IN</Text>
-                    </TouchableHighlight>
-                    <TouchableHighlight style={styles.loginFooter} onPress={ () => navigation.navigate('signup') }>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.loginFooter} onPress={ () => navigation.navigate('signup') }>
                         <Text style={styles.bottomLegend}> Don't have an account? <Text style={styles.boldText}> Sign Up</Text></Text>
-                    </TouchableHighlight>
+                    </TouchableOpacity>
                 </View>
             </TouchableWithoutFeedback>
         )   
@@ -118,7 +112,8 @@ const styles = StyleSheet.create({
         color: '#ffffff'
     },
     loginFooter: {
-        marginBottom: 60
+        marginBottom: 60,
+        alignItems: 'center'
     },
     bottomLegend: {
         fontFamily: 'Manrope',
