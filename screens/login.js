@@ -46,10 +46,10 @@ export function Login({ navigation }){
                             value={password}
                         />
                     </View>
-                    <TouchableOpacity style={styles.button} onPress={handleSubmit}>
+                    <TouchableOpacity style={styles.button} onPress={handleSubmit} activeOpacity={0.9}>
                         <Text style={styles.buttonText}>SIGN IN</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.loginFooter} onPress={ () => navigation.navigate('signup') }>
+                    <TouchableOpacity style={styles.loginFooter} onPress={ () => navigation.navigate('signup') } activeOpacity={0.9}>
                         <Text style={styles.bottomLegend}> Don't have an account? <Text style={styles.boldText}> Sign Up</Text></Text>
                     </TouchableOpacity>
                 </View>

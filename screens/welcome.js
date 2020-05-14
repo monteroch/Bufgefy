@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableHighlight, ImageBackground } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, ImageBackground } from 'react-native';
 import { useFonts } from '@use-expo/font';
 
 
@@ -17,12 +17,12 @@ export const Welcome = ({ navigation }) => {
             <ImageBackground source={require('../assets/images/wp4.jpg')} style={styles.container}>
                 <Text style={styles.content}>Budgefy</Text>
                 <View style={styles.buttonsContainer}>
-                    <TouchableHighlight style={styles.buttonSignUp} onPress={() => navigation.navigate('signup')}>
+                    <TouchableOpacity style={styles.buttonSignUp} onPress={() => navigation.navigate('signup')} activeOpacity={0.9}>
                         <Text style={styles.buttonText}>SIGN UP</Text>
-                    </TouchableHighlight>
-                    <TouchableHighlight style={styles.buttonLogin} onPress={() => navigation.navigate('login')}>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.buttonLogin} onPress={() => navigation.navigate('login')} activeOpacity={0.9}>
                         <Text style={styles.buttonText}>LOGIN</Text>
-                    </TouchableHighlight>
+                    </TouchableOpacity>
                 </View>
             </ImageBackground>
         )

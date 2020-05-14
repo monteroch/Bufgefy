@@ -68,10 +68,10 @@ export function SignUp({ navigation }){
                             value={passwordConfirmation}
                         />
                     </View>
-                    <TouchableOpacity style={styles.button} onPress={handleSubmit}>
+                    <TouchableOpacity style={styles.button} onPress={handleSubmit} activeOpacity={0.9}>
                         <Text style={styles.buttonText}>SIGN UP</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.loginFooter} onPress={ () => navigation.navigate('login') }>
+                    <TouchableOpacity style={styles.loginFooter} onPress={ () => navigation.navigate('login') } activeOpacity={0.9}>
                         <Text style={styles.bottomLegend}> Already a member? <Text style={styles.boldText}> Login</Text></Text>
                     </TouchableOpacity>
                 </View>
@@ -125,7 +125,7 @@ const styles = StyleSheet.create({
         height: 50,
         marginTop: 40,
         backgroundColor: 'rgb(29, 53, 87)',
-        marginBottom: 20
+        marginBottom: 20,
     },
     buttonText: {
         borderBottomColor: 'rgba(0, 0, 0, 0.2)',
