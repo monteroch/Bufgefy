@@ -2,6 +2,8 @@ import  React, { useState, useEffect } from 'react';
 import { View, TextInput, StyleSheet, Image, Text , TouchableWithoutFeedback, Keyboard, TouchableOpacity } from 'react-native';
 import { global } from '../shared/styles';
 import { useFonts } from '@use-expo/font';
+import { useDispatch, useSelector } from "react-redux";
+import { loginRequest } from '../redux/actions/auth.actions';
 
 export function Login({ navigation }){
 
@@ -11,12 +13,19 @@ export function Login({ navigation }){
 
     const [ email, setEmail ] = useState('christian@test.com');
     const [ password, setPassword ] = useState('holamundo');
-    // const [ email, setEmail ] = useState('');
-    // const [ password, setPassword ] = useState('');
+
+    const dispatch = useDispatch();
+
 
     const handleSubmit = () => {
         console.log(`The email and password are: ${email}: ${password}`);
-    }
+        dispatch(loginRequest({
+            email: email,
+            password: password
+        }));
+        setEmail("");
+        setPassword("");
+    };
 
 
     return(

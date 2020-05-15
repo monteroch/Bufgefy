@@ -4,6 +4,7 @@ import { Dashboard } from '../screens/dashboard';
 import { Settings } from '../screens/settings';
 import { About } from '../screens/about';
 import { useWindowDimensions } from 'react-native';
+import { CustomDrawerContent } from '../components/drawerMenu';
 
 
 export function MainStack(){
@@ -23,6 +24,7 @@ export function MainStack(){
                 activeTintColor: 'red',
                 inactiveTintColor: 'blue'
             }}
+            drawerContent={(props) => <CustomDrawerContent {...props}/>}
         >
             <Drawer.Screen name="dashboard" component={ Dashboard }/>
             <Drawer.Screen name="settings" component={ Settings }/>

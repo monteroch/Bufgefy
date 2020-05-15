@@ -1,13 +1,18 @@
-import  React, { useState, useEffect } from 'react';
+import  React, { useState } from 'react';
 import { View, TextInput, StyleSheet, Image, Text , TouchableWithoutFeedback, Keyboard, TouchableOpacity } from 'react-native';
+import { useDispatch } from "react-redux";
 import { global } from '../shared/styles';
 import { useFonts } from '@use-expo/font';
+import { createAccountRequest } from '../redux/actions/auth.actions';
 
 export function SignUp({ navigation }){
 
     let [fontsLoaded] = useFonts({
         'Manrope': require('../assets/fonts/Manrope.ttf')
     });
+
+    const dispatch = useDispatch();
+
 
     const [ fullname, setFullname ] = useState('');
     const [ email, setEmail ] = useState('');
@@ -19,6 +24,18 @@ export function SignUp({ navigation }){
         console.log(`Fullname: ${fullname}`);
         console.log(`Email: ${email}`);
         console.log(`Password: ${password}`);
+        console.log(`passwordConfirmation: ${passwordConfirmation}`);
+        if(password === passwordConfirmation){
+            dispatch(createAccountRequest({
+                fullname: fullname,
+                email: email,
+                password: password
+            }));
+        }
+        setFullname("");
+        setEmail("");
+        setPassword("");
+        setPasswordConfirmation("");
     }
 
 
