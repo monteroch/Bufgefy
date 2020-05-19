@@ -1,9 +1,10 @@
 import { all, call } from 'redux-saga/effects';
 import { authSagas } from './auth-sagas';
-// import { dbSagas } from './db-sagas';
+import { databaseSagas } from './database.sagas';
 
 export default function* rootSaga(){
     yield all([
-        call(authSagas)
+        call(authSagas),
+        call(databaseSagas)
     ])
 };

@@ -2,6 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import { signOutRequest } from '../redux/actions/auth.actions';
 import { useDispatch } from "react-redux";
+import { SimpleLineIcons } from '@expo/vector-icons'; 
 import {
     DrawerContentScrollView,
     DrawerItemList,
@@ -21,6 +22,7 @@ import {
       <DrawerContentScrollView {...props}>
         <DrawerItemList {...props} />
         <DrawerItem
+            icon={() => <SimpleLineIcons name="logout" size={24} color="black" />}
             label="Sign out!"
             onPress={pressHandler}
         />

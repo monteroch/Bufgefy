@@ -5,6 +5,7 @@ import { Settings } from '../screens/settings';
 import { About } from '../screens/about';
 import { useWindowDimensions } from 'react-native';
 import { CustomDrawerContent } from '../components/drawerMenu';
+import { SimpleLineIcons } from '@expo/vector-icons';
 
 
 export function MainStack(){
@@ -16,7 +17,7 @@ export function MainStack(){
         <Drawer.Navigator 
             initialRouteName="Dashboard"
             drawerStyle={{
-                width: 200,
+                width: 60,
                 // backgroundColor:'rgba(0, 0, 0, 0.7)',
                 
             }}
@@ -26,9 +27,33 @@ export function MainStack(){
             }}
             drawerContent={(props) => <CustomDrawerContent {...props}/>}
         >
-            <Drawer.Screen name="dashboard" component={ Dashboard }/>
-            <Drawer.Screen name="settings" component={ Settings }/>
-            <Drawer.Screen name="about" component={ About }/>
+            <Drawer.Screen 
+                name="dashboard" 
+                component={ Dashboard }
+                options={{
+                    drawerIcon:(
+                        () => <SimpleLineIcons name="home" size={24} color="black" />
+                    )
+                }}
+            />
+            <Drawer.Screen 
+                name="settings" 
+                component={ Settings }
+                options={{
+                    drawerIcon:(
+                        () => <SimpleLineIcons name="settings" size={24} color="black" />
+                    )
+                }}
+            />
+            <Drawer.Screen 
+                name="about" 
+                component={ About }
+                options={{
+                    drawerIcon:(
+                        () => <SimpleLineIcons name="info" size={24} color="black" />
+                    )
+                }}
+            />
         </Drawer.Navigator>
     );
 };
