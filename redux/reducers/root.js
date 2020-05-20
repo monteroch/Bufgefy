@@ -41,7 +41,18 @@ function rootReducer(state = initialState, action){
             return{
                 ...state,
                 error: action.error
-            }   
+            }
+        case "GET_USER_SUCCESS":
+            return{
+                ...state,
+                user: action.payload,
+                error: null
+            }
+        case "GET_USER_FAILURE":
+            return{
+                ...state,
+                error: action.error
+            }  
         default:
             return state
     }

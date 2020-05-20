@@ -32,7 +32,7 @@ export function MainStack(){
                 component={ Dashboard }
                 options={{
                     drawerIcon:(
-                        () => <SimpleLineIcons name="home" size={24} color="black" />
+                        () => <SimpleLineIcons name="home" size={24} color="#ffffff" />
                     )
                 }}
             />
@@ -41,7 +41,7 @@ export function MainStack(){
                 component={ Settings }
                 options={{
                     drawerIcon:(
-                        () => <SimpleLineIcons name="settings" size={24} color="black" />
+                        () => <SimpleLineIcons name="settings" size={24} color="#ffffff" />
                     )
                 }}
             />
@@ -50,7 +50,7 @@ export function MainStack(){
                 component={ About }
                 options={{
                     drawerIcon:(
-                        () => <SimpleLineIcons name="info" size={24} color="black" />
+                        () => <SimpleLineIcons name="info" size={24} color="#ffffff" />
                     )
                 }}
             />

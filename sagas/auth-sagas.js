@@ -2,7 +2,7 @@ import { takeEvery, put, all, call } from 'redux-saga/effects';
 import * as firebase from 'firebase';
 import * as RootNavigation from '../routes/RootNavigation';
 import { loginSuccess, loginFailure, createAccountFailure, signOutSuccess, signOutFailure } from '../redux/actions/auth.actions';
-import { saveUserRequest } from '../redux/actions/database.actions';
+import { saveUserRequest, getUserRequest } from '../redux/actions/database.actions';
 
 export function* login(action){
     try{
@@ -14,6 +14,7 @@ export function* login(action){
         );
         let uid = result.user.uid;
         yield put(loginSuccess(result.user.uid));
+        yield put(getUserRequest(result.user.uid));
         yield RootNavigation.navigate('main', {
             screen: 'dashboard',
             params: { uid: uid }
@@ -53,30 +54,6 @@ export function* createAccount(action){
 export function* onCreateAccountRequest(){
     yield takeEvery("CREATE_ACCOUNT_REQUEST", createAccount);
 }
-
-// export function* saveUser(action){
-//     console.log("Inside save User")
-//     try{
-//         const ref = firebase.database().ref('users/' + action.payload.uid)
-//         const result = yield call(
-//             [ref, ref.set],
-//             {
-//                 id: action.payload.uid,
-//                 fullname: action.payload.fullname,
-//                 email: action.payload.email
-//             }
-//         );
-//         yield console.log("Here in saveUser")
-//         console.log("The result is: ", result);
-//         yield put(saveUserSuccess(result.user));
-//     }catch(error){
-//         yield put(saveUserFailure(error.message));
-//     }
-// }
-
-// export function* onSaveUserRequest(){
-//     yield takeEvery("SAVE_USER_REQUEST", saveUser);
-// }
 
 export function* signOut(action){
     try{

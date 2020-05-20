@@ -1,8 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { SimpleLineIcons } from '@expo/vector-icons';
-import { AntDesign } from '@expo/vector-icons'; 
-import { Entypo } from '@expo/vector-icons'; 
+import { FontAwesome5 } from '@expo/vector-icons'; 
 
 export const Header = ({navigation, title}) => {
 
@@ -12,7 +11,7 @@ export const Header = ({navigation, title}) => {
 
     return(
         <View style={styles.headerContainer}>
-            <Entypo name="grid" size={26} color="#c4c3d0" style={styles.headerIcon} onPress={openMenu}/>
+            <SimpleLineIcons name="menu" size={24} color="rgb(29, 53, 87)" style={styles.headerIcon} onPress={openMenu} />
             <View style={styles.headerContent}>
                 <Text style={styles.title}> { title } </Text>
             </View>
@@ -27,7 +26,7 @@ const styles = StyleSheet.create({
         // alignItems: 'center',
         justifyContent: 'center',
         height: 70,
-        backgroundColor: 'rgba(0, 0, 0, 0.7)'
+        backgroundColor: '#d3dbe6'
     },
     headerContent:{
         flexDirection: 'row',

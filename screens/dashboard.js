@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Header } from '../components/header';
 
 export const Dashboard = ({navigation}) => {
+
+    useEffect(() => {
+        //get the user
+    }, []);
+
     return(        
         <View style={styles.container}>
             <Header navigation={navigation} title="Dashboard" />
@@ -15,7 +20,7 @@ export const Dashboard = ({navigation}) => {
 
 const styles = StyleSheet.create({
     container:{
-        backgroundColor: '#ace1af',
+        backgroundColor: '#d3dbe6',
         height: '100%'
     },
     body:{
