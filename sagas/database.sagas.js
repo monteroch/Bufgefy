@@ -26,20 +26,13 @@ export function* onSaveUserRequest(){
 }
 
 export function* getUser(action){
-    console.log("-------------------------");
-    console.log("Inside get User");
+    let user = {};
     try{
-        const ref = firebase.database().ref('users/' + action.payload.uid)
-        const result = yield call(
-            [ref, ref.on],
-            'value',
-            (snapshot) => {
-                console.log("snapshot", snapshot.val());
-            }
-        );
-        yield console.log("Result: ");
-        yield result();
-        // yield put(saveUserSuccess(result));
+        console.log("Action: ", action);
+        const ref = yield firebase.database().ref('users/' + action.payload).on('value', (snapshot) => {
+            user = {...snapshot.val()};
+        });
+        yield put(getUserSuccess(user))
     }catch(error){
         yield put(getUserFailure(error.message));
     }

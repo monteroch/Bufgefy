@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState  } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Header } from '../components/header';
+import { useSelector } from 'react-redux'
 
 export const Dashboard = ({navigation}) => {
 
@@ -8,9 +9,12 @@ export const Dashboard = ({navigation}) => {
         //get the user
     }, []);
 
+    const user = useSelector(state => state.user);
+
     return(        
         <View style={styles.container}>
             <Header navigation={navigation} title="Dashboard" />
+            {(user)?(<Text>{user.fullname}</Text>):(<Text>No user found</Text>)}
             <View style={styles.body}>
                 <Text style={styles.content}>Dashboard</Text>
             </View>
