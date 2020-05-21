@@ -31,6 +31,8 @@ export function* getUser(action){
         console.log("Action: ", action);
         const ref = yield firebase.database().ref('users/' + action.payload).on('value', (snapshot) => {
             user = {...snapshot.val()};
+            console.log("-----------------");
+            console.log(user);
         });
         yield put(getUserSuccess(user))
     }catch(error){
