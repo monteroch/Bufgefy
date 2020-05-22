@@ -1,6 +1,7 @@
 import React, { useEffect, useState  } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Header } from '../components/header';
+import { BalanceComponent } from '../components/balance.component';
 import { useSelector } from 'react-redux'
 import { useFonts } from '@use-expo/font';
 
@@ -44,11 +45,12 @@ export const Dashboard = ({navigation}) => {
             <View style={styles.container}>
                 <Header navigation={navigation} />
                 <View style={styles.body}>
-                    {(user)?
+                    {(user) ?
                         (
                             <View>
                                 <Text style={styles.greeting}>{ greeting() }</Text>
                                 <Text style={styles.greeting}>{user.fullname.split(" ")[1]}!</Text>
+                                <BalanceComponent/>
                             </View>
                         ):
                         (<Text>No user found</Text>)
