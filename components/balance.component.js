@@ -18,11 +18,11 @@ const styles = StyleSheet.create({
         marginVertical: 20
     },
     title: {
-        fontSize: 15,
+        fontSize: 14,
         color: '#9c9c9c'
     },
     body: {
-        fontSize: 40,
+        fontSize: 35,
         marginVertical: 10
     },
     footer: {

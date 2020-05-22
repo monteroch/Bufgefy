@@ -2,6 +2,7 @@ import React, { useEffect, useState  } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Header } from '../components/header';
 import { BalanceComponent } from '../components/balance.component';
+import { TransactionsComponent } from '../components/transactions.component';
 import { useSelector } from 'react-redux'
 import { useFonts } from '@use-expo/font';
 
@@ -51,6 +52,7 @@ export const Dashboard = ({navigation}) => {
                                 <Text style={styles.greeting}>{ greeting() }</Text>
                                 <Text style={styles.greeting}>{user.fullname.split(" ")[1]}!</Text>
                                 <BalanceComponent/>
+                                <TransactionsComponent />
                             </View>
                         ):
                         (<Text>No user found</Text>)
@@ -72,13 +74,13 @@ const styles = StyleSheet.create({
         // justifyContent: 'center',
         flexDirection: 'column',
         flex: 1,
-        padding:20
+        padding:20,
     },
     content: {
         fontSize: 40
     },
     greeting: {
         fontFamily: 'Manrope',
-        fontSize: 26
+        fontSize: 24
     }
 });
