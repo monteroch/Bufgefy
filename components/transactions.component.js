@@ -13,9 +13,15 @@ export const TransactionsComponent = () => {
 
 const styles = StyleSheet.create({
     container: {
-        borderWidth: 1,
-        borderColor: 'black',
-        borderRadius: 5,
-        flexGrow: 1
+        backgroundColor: '#d3dbe6',
+        padding: 10,
+        borderRadius: 6,
+        elevation: 4,
+        shadowOffset: { width: 1, height: 1 },
+        shadowColor: '#333',
+        shadowOpacity: 0.6,
+        shadowRadius: 2,
+        marginHorizontal: 4,
+        marginVertical: 6
     }
 });

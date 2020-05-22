@@ -46,7 +46,7 @@ export const Dashboard = ({navigation}) => {
             <View style={styles.container}>
                 <Header navigation={navigation} />
                 <View style={styles.body}>
-                    {(user) ?
+                    {(user && user.fullname) ?
                         (
                             <View>
                                 <Text style={styles.greeting}>{ greeting() }</Text>
