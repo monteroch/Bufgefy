@@ -4,28 +4,52 @@ import { FontAwesome } from '@expo/vector-icons';
 
 export const TransactionsComponent = () => {
 
+    const transactions = [
+        {
+            name: "Hamburguer",
+            date: "Just now",
+            amount: 27.99
+        },{
+            name: "Chicken Wings",
+            date: "05/29/2020",
+            amount: 15.00
+        },{
+            name: "Movie theater",
+            date: "05/28/2020",
+            amount: 20.50
+        }
+    ];
+
     return(
         <View style={styles.container}>
             <View style={styles.header}>
                 <View style={styles.title}><Text style={styles.titleText}>Transaction</Text></View>
                 <View style={styles.options}><Text style={styles.optionsText}>See all</Text></View>
             </View>
-            <View style={styles.body}>
-                <View style={styles.conceptContainer}>
-                    <FontAwesome style={styles.icon} name="dollar" size={24} color="black" />
-                    <View style={styles.concept}>
-                        <View>
-                            <Text style={styles.product}>Hamburguer</Text>
+            {
+                 (transactions)?(
+                    transactions.map((transaction) => (
+                        <View style={styles.body}>
+                            <View style={styles.conceptContainer}>
+                                <FontAwesome style={styles.icon} name="dollar" size={24} color="black" />
+                                <View style={styles.concept}>
+                                    <View>
+                                        <Text style={styles.product}>{transaction.name}</Text>
+                                    </View>
+                                    <View>
+                                        <Text style={styles.date}>{transaction.date}</Text>
+                                    </View>
+                                </View>
+                            </View>
+                            <View style={styles.costContainer}>
+                                <Text style={styles.cost}>{transaction.amount}</Text>
+                            </View>
                         </View>
-                        <View>
-                            <Text style={styles.date}>Just now</Text>
-                        </View>
-                    </View>
-                </View>
-                <View style={styles.costContainer}>
-                    <Text style={styles.cost}>-$27.99</Text>
-                </View>
-            </View>
+                    ))
+                ):(
+                    <Text>No transactions...</Text>
+                )
+            }
         </View>
     );
 
